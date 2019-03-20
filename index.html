@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lat/long validation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+  <div class="container bg-dark">
+    <div class="row justify-content-center">
+      <div class="col-md-6 bg-light my-5 font-weight-light">
+        <div class="p-5">
+          <p class="">This form will take in a latitude and longitude input, run it through a PHP script, and return a status page showing how far it is from the WeDoWorldWide office location <span class="font-weight-bolder">(35.316770, -82.461131)</span>.</p>
+          <form action="validate.php" method="POST">
+            <div class="form-group">
+              <label for="latlongInput">Latitude and longitude, separated with a comma</label>
+              <input
+              class="form-control"
+              type="text" name="latlongVal"
+              id="latlongInput"
+              placeholder="some_decimal, another_decimal"
+              required>
+              <button class="btn btn-primary m-3" type="submit">Calculate!</button>
+            </div>
+          </form>
+          <p><span class="font-weight-bolder">Note</span> that there isn't any validation on this form field. If you were to input malicious code (or anything, really) to the field above it could execute. It will also break if you do anything other than two comma separated integers. It's completely possible to do on-page script execution and validation too, but I didn't get that far. Those things are <a href="https://www.w3schools.com/php/php_form_validation.asp" target="_blank">covered here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
